@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_030205) do
+ActiveRecord::Schema.define(version: 2021_08_03_060840) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,6 +40,26 @@ ActiveRecord::Schema.define(version: 2019_08_27_030205) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "errors", force: :cascade do |t|
+    t.string "path"
+    t.string "read_status"
+    t.string "priority"
+    t.string "hostname"
+    t.string "date"
+    t.string "title"
+    t.string "details"
+    t.string "exception_class"
+    t.string "exception_message"
+    t.string "exception_stacktrace"
+    t.string "request_log"
+    t.string "environment_variables"
+    t.string "request_id"
+    t.string "remote_ip"
+    t.string "site_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "microposts", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id", null: false
@@ -47,6 +67,13 @@ ActiveRecord::Schema.define(version: 2019_08_27_030205) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
+
+  create_table "practice_model_v1s", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -57,6 +84,13 @@ ActiveRecord::Schema.define(version: 2019_08_27_030205) do
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
+  create_table "rules", force: :cascade do |t|
+    t.integer "execution_order"
+    t.string "filter"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

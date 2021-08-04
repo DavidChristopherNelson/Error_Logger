@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  path: 
+  read_status: MyString
+  priority: MyString
+  hostname: MyString
+  date: MyString
+  title: MyString
+  details: MyString
+  exception_class: MyString
+  exception_message: MyString
+  exception_stacktrace: MyString
+  request_log: MyString
+  environment_variables: MyString
+  request_id: MyString
+  remote_ip: MyString
+  site_url: MyString
+
+two:
+  path: 
+  read_status: MyString
+  priority: MyString
+  hostname: MyString
+  date: MyString
+  title: MyString
+  details: MyString
+  exception_class: MyString
+  exception_message: MyString
+  exception_stacktrace: MyString
+  request_log: MyString
+  environment_variables: MyString
+  request_id: MyString
+  remote_ip: MyString
+  site_url: MyString

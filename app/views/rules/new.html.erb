@@ -1,0 +1,17 @@
+<h1>Rules#new</h1>
+<p>Find me in app/views/rules/new.html.erb</p>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @rule, local: true) do |f| %>
+    
+      <%= f.label :execution_order %>
+      <%= f.text_field :execution_order %>
+      
+      <%= f.label :filter %>
+      <%= f.text_field :filter %>
+      
+      <%= f.submit "Create Error Entry", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
