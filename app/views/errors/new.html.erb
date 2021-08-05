@@ -4,22 +4,55 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @user, local: true) do |f| %>
+    <%= form_with(model: @error, local: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :path %>
+      <%= f.text_field :path, class: 'form-control' %>
+
+      <%= f.label :read_status %>
+      <%= f.text_field :read_status, class: 'form-control' %>
 
       <%= f.label :priority %>
       <%= f.text_field :priority, class: 'form-control' %>
 
       <%= f.label :hostname %>
-      <%= f.email_field :hostname, class: 'form-control' %>
+      <%= f.text_field :hostname, class: 'form-control' %>
       
       <%= f.label :date %>
       <%= f.text_field :date, class: 'form-control' %>
 
       <%= f.label :title %>
-      <%= f.email_field :title, class: 'form-control' %>
+      <%= f.text_field :title, class: 'form-control' %>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <%= f.label :details %>
+      <%= f.text_field :details, class: 'form-control' %>
+
+      <%= f.label :exception_class %>
+      <%= f.text_field :exception_class, class: 'form-control' %>
+
+      <%= f.label :exception_message %>
+      <%= f.text_field :exception_message, class: 'form-control' %>
+
+      <%= f.label :exception_stacktrace %>
+      <%= f.text_field :exception_stacktrace, class: 'form-control' %>
+
+      <%= f.label :request_log %>
+      <%= f.text_field :request_log, class: 'form-control' %>
+
+      <%= f.label :environment_variables %>
+      <%= f.text_field :environment_variables, class: 'form-control' %>
+
+      <%= f.label :request_id %>
+      <%= f.text_field :request_id, class: 'form-control' %>
+
+      <%= f.label :remote_ip %>
+      <%= f.text_field :remote_ip, class: 'form-control' %>
+
+      <%= f.label :site_url %>
+      <%= f.text_field :site_url, class: 'form-control' %>
+
+      <%= f.submit "Create my Error", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

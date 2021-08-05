@@ -1,0 +1,120 @@
+<h1>Error Information</h1>
+
+<div class="row">
+  <aside class="col-md-12">
+    <section>
+      <h1>
+        <b>Error ID: </b>
+      </h1>
+      <p>
+        <%= @error.id %>
+      </p>    
+      <h1>
+        <b>Path: </b>
+      </h1>
+      <p>
+        <%= @error.path %>
+      </p>    
+      <h1>
+        <b>Read Status: </b>
+      </h1>
+      <p>
+        <%= @error.read_status %>
+      </p>    
+      <h1>
+        <b>Priority: </b>
+      </h1>
+      <p>
+        <%= @error.priority %>
+      </p>
+      <h1>
+        <b>Hostname: </b>
+      </h1>
+      <p>
+        <%= @error.hostname %>
+      </p>  
+      <h1>
+        <b>Date: </b>
+      </h1>
+      <p>
+        <%= @error.date %>
+      </p>  
+      <h1>
+        <b>Title: </b>
+      </h1>
+      <p>
+        <%= @error.title %>
+      </p>
+      <h1>
+        <b>Details: </b>
+      </h1>
+      <p>
+        <%= @error.details %>
+      </p>
+      <h1>
+        <b>Exception Class: </b>
+      </h1>
+      <p>
+        <%= @error.exception_class %>
+      </p>
+      <h1>
+        <b>Exception Message: </b>
+      </h1>
+      <p>
+        <%= @error.exception_message %>
+      </p>
+      <h1>
+        <b>Exception Stacktrace: </b>
+      </h1>
+      <p>
+        <%= @error.exception_stacktrace %>
+      </p>
+      <h1>
+        <b>Request_log: </b>
+      </h1>
+      <p>
+        <%= @error.request_log %>
+      </p>
+      <h1>
+        <b>Environment Variables: </b>
+      </h1>
+      <p>
+        <%= @error.environment_variables %>
+      </p>
+      <h1>
+        <b>Request ID: </b>
+      </h1>
+      <p>
+        <%= @error.request_id %>
+      </p>
+      <h1>
+        <b>Remote IP: </b>
+      </h1>
+      <p>
+        <%= @error.remote_ip %>
+      </p>
+      <h1>
+        <b>Site URL: </b>
+      </h1>
+      <p>
+        <%= @error.site_url%>
+      </p>  
+    </section>
+  </aside>
+</div>
+
+<h2>Rule Engine Output</h2>
+<%= @rule_engine_output %>
+<!---
+  create_table "errors", force: :cascade do |t|
+    t.string "path"
+    t.string "exception_stacktrace"
+    t.string "request_log"
+    t.string "environment_variables"
+    t.string "request_id"
+    t.string "remote_ip"
+    t.string "site_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+  --->

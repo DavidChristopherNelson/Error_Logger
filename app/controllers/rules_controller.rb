@@ -1,3 +1,5 @@
+require 'json'
+
 class RulesController < ApplicationController
   
   def show
