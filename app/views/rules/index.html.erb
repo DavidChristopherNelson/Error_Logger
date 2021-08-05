@@ -1,0 +1,38 @@
+<h1>Rule Index</h1>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <ul>
+        <% @rules.each do |rule| %>
+          <li>
+            <h1>
+              <b>Execution Order: </b>
+            </h1>
+            <p>
+              <%= rule.execution_order %>
+            </p>
+            <h1>
+              <b>Field: </b>
+            </h1>
+            <p>
+              <%= rule.field %>
+            </p>
+            <h1>
+              <b>Regex: </b>
+            </h1>
+            <p>
+              <%= rule.regex %>
+            </p>
+            <h1>
+              <b>Path: </b>
+            </h1>
+            <p>
+              <%= rule.path %>
+            </p>     
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </aside>
+</div>
