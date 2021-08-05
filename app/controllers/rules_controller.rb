@@ -19,9 +19,16 @@ class RulesController < ApplicationController
     end
   end
   
+  def destroy
+    Rule.all.each do |rule|
+      rule.destroy
+    end
+    flash[:success] = "All rules deleted"
+  end
+  
   private
 
   def rule_params
-    params.require(:rule).permit(:execution_order, :filter)
+    params.require(:rule).permit(:execution_order, :field, :path, :regex)
   end
 end

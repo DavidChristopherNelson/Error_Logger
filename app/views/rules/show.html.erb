@@ -4,11 +4,32 @@
   <aside class="col-md-4">
     <section>
       <h1>
-        <%= @rule.filter %>
-      </h1>      
-      <h1>
+        <b>Execution Order: </b>
+      </h1>
+      <p>
         <%= @rule.execution_order %>
-      </h1>      
+      </p>
+      <h1>
+        <b>Field: </b>
+      </h1>
+      <p>
+        <%= @rule.field %>
+      </p>
+      <h1>
+        <b>Regex: </b>
+      </h1>
+      <p>
+        <%= @rule.regex %>
+      </p>
+      <h1>
+        <b>Path: </b>
+      </h1>
+      <p>
+        <%= @rule.path %>
+      </p>     
     </section>
   </aside>
 </div>
+
+<%= link_to "delete all rules", @rule, method: :delete,
+data: { confirm: "You sure?" } %>

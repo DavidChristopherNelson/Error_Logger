@@ -8,8 +8,14 @@
       <%= f.label :execution_order %>
       <%= f.text_field :execution_order %>
       
-      <%= f.label :filter %>
-      <%= f.text_field :filter %>
+      <%= f.label :field %>
+      <%= f.text_field :field %>
+
+      <%= f.label :regex %>
+      <%= f.text_field :regex %>
+
+      <%= f.label :path %>
+      <%= f.text_field :path %>
       
       <%= f.submit "Create Error Entry", class: "btn btn-primary" %>
     <% end %>

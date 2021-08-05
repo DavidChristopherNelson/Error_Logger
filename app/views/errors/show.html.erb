@@ -105,16 +105,5 @@
 
 <h2>Rule Engine Output</h2>
 <%= @rule_engine_output %>
-<!---
-  create_table "errors", force: :cascade do |t|
-    t.string "path"
-    t.string "exception_stacktrace"
-    t.string "request_log"
-    t.string "environment_variables"
-    t.string "request_id"
-    t.string "remote_ip"
-    t.string "site_url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-  --->
+
+<li><%= link_to "Delete Data from Rule Table in Database", root_path %></li>

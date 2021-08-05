@@ -3,7 +3,7 @@ class ErrorsController < ApplicationController
   def show
     @error = Error.find(params[:id])
     @rule = Rule.new
-    @rule_engine_output = @rule.rule_engine
+    @rule_engine_output = @rule.rule_engine(@error)
   end
   
   def new
