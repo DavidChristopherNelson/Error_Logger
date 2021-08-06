@@ -1,0 +1,114 @@
+<h1>Error Index</h1>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <ul>
+        <% @errors.each do |error| %>
+          <li>
+            <h1>
+              <b>Error ID: </b>
+            </h1>
+            <p>
+              <%= error.id %>
+            </p>    
+            <h1>
+              <b>Path: </b>
+            </h1>
+            <p>
+              <%= error.path %>
+            </p>    
+            <h1>
+              <b>Read Status: </b>
+            </h1>
+            <p>
+              <%= error.read_status %>
+            </p>    
+            <h1>
+              <b>Priority: </b>
+            </h1>
+            <p>
+              <%= error.priority %>
+            </p>
+            <h1>
+              <b>Hostname: </b>
+            </h1>
+            <p>
+              <%= error.hostname %>
+            </p>  
+            <h1>
+              <b>Date: </b>
+            </h1>
+            <p>
+              <%= error.date %>
+            </p>  
+            <h1>
+              <b>Title: </b>
+            </h1>
+            <p>
+              <%= error.title %>
+            </p>
+            <h1>
+              <b>Details: </b>
+            </h1>
+            <p>
+              <%= error.details %>
+            </p>
+            <h1>
+              <b>Exception Class: </b>
+            </h1>
+            <p>
+              <%= error.exception_class %>
+            </p>
+            <h1>
+              <b>Exception Message: </b>
+            </h1>
+            <p>
+              <%= error.exception_message %>
+            </p>
+            <h1>
+              <b>Exception Stacktrace: </b>
+            </h1>
+            <p>
+              <%= error.exception_stacktrace %>
+            </p>
+            <h1>
+              <b>Request_log: </b>
+            </h1>
+            <p>
+              <%= error.request_log %>
+            </p>
+            <h1>
+              <b>Environment Variables: </b>
+            </h1>
+            <p>
+              <%= error.environment_variables %>
+            </p>
+            <h1>
+              <b>Request ID: </b>
+            </h1>
+            <p>
+              <%= error.request_id %>
+            </p>
+            <h1>
+              <b>Remote IP: </b>
+            </h1>
+            <p>
+              <%= error.remote_ip %>
+            </p>
+            <h1>
+              <b>Site URL: </b>
+            </h1>
+            <p>
+              <%= error.site_url%>
+            </p>
+            <%= link_to "View Error", error, class: "btn btn-lg btn-primary" %>
+            <br>
+            <br>
+            <br>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </aside>
+</div>

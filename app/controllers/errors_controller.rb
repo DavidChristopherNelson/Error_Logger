@@ -1,9 +1,11 @@
 class ErrorsController < ApplicationController
   
+  def index
+    @errors = Error.all
+  end
+
   def show
     @error = Error.find(params[:id])
-    @rule = Rule.new
-    @rule_engine_output = @rule.rule_engine(@error)
   end
   
   def new
@@ -13,13 +15,26 @@ class ErrorsController < ApplicationController
   def create
     @error = Error.new(error_params)
     if @error.save
-      rule_engine error
+      @rule = Rule.new
+      @rule.rule_engine(@error)
       redirect_to @error
     else
       render 'new'
     end
   end
   
+  def destroy
+    Error.find(params[:id]).destroy
+    redirect_to '/'
+    flash[:success] = "Error Deleted"
+  end
+  
+  def error_search
+    @rules = Rule.all
+    @errors = Error.where(:path => params[:q])
+    @output = params[:q]
+  end
+
   private
   
   def error_params

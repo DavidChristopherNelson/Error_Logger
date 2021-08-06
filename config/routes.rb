@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root   'errors#new'
+  root   'static_pages#home'
+  get    '/error_search',    to: 'errors#error_search'
   get    '/help',      to: 'static_pages#help'
   get    '/about',     to: 'static_pages#about'
   get    '/contact',   to: 'static_pages#contact'

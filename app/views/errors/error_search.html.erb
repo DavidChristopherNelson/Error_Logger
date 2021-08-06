@@ -1,0 +1,62 @@
+<h1>Error Search</h1>
+<h2>List of folders</h2>
+
+<% @rules.order("path").each do |rule| %>
+  <center><%= rule.path %></center>
+  <br>
+<% end %>
+
+<p> Which folder do you want to search? </p>
+<form action="/error_search">
+  <input name="q" type="text" placeholder="Search" aria-label="Search">
+  <button type="submit">Search</button>
+</form>
+
+<h2>List of Errors in <%= params[:q] %> </h2>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <ul>
+        <% @errors.each do |error| %>
+          <li>
+            <h1>
+              <b>Read Status: </b>
+            </h1>
+            <p>
+              <%= error.read_status %>
+            </p>    
+            <h1>
+              <b>Priority: </b>
+            </h1>
+            <p>
+              <%= error.priority %>
+            </p>
+            <h1>
+              <b>Hostname: </b>
+            </h1>
+            <p>
+              <%= error.hostname %>
+            </p>  
+            <h1>
+              <b>Date: </b>
+            </h1>
+            <p>
+              <%= error.date %>
+            </p>  
+            <h1>
+              <b>Title: </b>
+            </h1>
+            <p>
+              <%= error.title %>
+            </p>
+            <%= link_to "View Error", error, class: "btn btn-lg btn-primary" %>
+            <br>
+            <br>
+            <br>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </aside>
+</div>

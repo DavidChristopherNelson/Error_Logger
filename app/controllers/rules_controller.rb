@@ -24,10 +24,9 @@ class RulesController < ApplicationController
   end
   
   def destroy
-    Rule.all.each do |rule|
-      rule.destroy
-    end
-    flash[:success] = "All rules deleted"
+    Rule.find(params[:id]).destroy
+    redirect_to '/'
+    flash[:success] = "Rule Deleted"
   end
   
   private

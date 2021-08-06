@@ -98,12 +98,9 @@
       </h1>
       <p>
         <%= @error.site_url%>
-      </p>  
+      </p>
+      <%= link_to "Delete Error", @error, method: :delete,
+      data: { confirm: "Are you sure?" }, class: "btn btn-lg btn-primary" %>
     </section>
   </aside>
 </div>
-
-<h2>Rule Engine Output</h2>
-<%= @rule_engine_output %>
-
-<li><%= link_to "Delete Data from Rule Table in Database", root_path %></li>
